@@ -1,11 +1,16 @@
+# -*- coding: utf-8 -*-
+from django.conf import settings
+from django.contrib import admin
+from django.contrib.sessions.models import Session
 
-# from django.contrib import admin
 
-# from sessioninfo import models
+class SessionAdmin(admin.ModelAdmin):
+    def _session_data(self, obj):
+        return obj.get_decoded()
+
+    list_display = ['session_key', '_session_data', 'expire_date']
 
 
-# class YourModelAdmin(admin.ModelAdmin):
-#    list_display = ['some', 'fields', ]
-#    search_fields = ['some', 'fieds', ]
-
-# admin.site.register(models.YourModel, YourModelAdmin)
+show_sessions = getattr(settings, 'SHOW_SESSIONS_IN_ADMIN', False)
+if show_sessions:
+    admin.site.register(Session, SessionAdmin)
