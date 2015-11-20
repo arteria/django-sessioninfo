@@ -1,5 +1,7 @@
 # django-sessioninfo
 
+[![Build Status](https://travis-ci.org/arteria/django-sessioninfo.svg?branch=master)](https://travis-ci.org/arteria/django-sessioninfo)
+
 * https://pypi.python.org/pypi/django-sessioninfo
 * https://github.com/arteria/django-sessioninfo 
 
