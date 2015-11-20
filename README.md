@@ -18,6 +18,6 @@ The management command `kill_sessions` can be used to log out all users at once.
 ## Features
 
 * Give detailled info about the sessions of your users.
-* Find users by session key.
+* Find users by session key (`utils.get_session_user`)
 * Logging out users mechanism.
 
