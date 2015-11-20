@@ -11,7 +11,7 @@
  
 * Add `'sessioninfo'` to your `INSTALLED_APPS`.
 
-In order to activate the Session Admin, set `SHOW_SESSIONS_IN_ADMIN==True` in your project settings.
+In order to activate the Session Admin, set `SHOW_SESSIONS_IN_ADMIN=True` in your project settings.
 
 The management command `kill_sessions` can be used to log out all users at once.
  
