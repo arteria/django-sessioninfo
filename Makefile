@@ -23,6 +23,9 @@ clean-pyc:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 
+clean-git:
+	rm .gitignore
+
 lint:
 	flake8 django-sessioninfo tests
 
@@ -46,10 +49,10 @@ docs:
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html
 
-release: clean
+release: clean clean-git
 	python setup.py sdist upload
 	python setup.py bdist_wheel upload
 
-sdist: clean
+sdist: clean clean-git
 	python setup.py sdist
 	ls -l dist
