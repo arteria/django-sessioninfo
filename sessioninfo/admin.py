@@ -9,6 +9,7 @@ class SessionAdmin(admin.ModelAdmin):
         return obj.get_decoded()
 
     list_display = ['session_key', '_session_data', 'expire_date']
+    ordering = ['expire_date']
 
 
 show_sessions = getattr(settings, 'SHOW_SESSIONS_IN_ADMIN', False)
